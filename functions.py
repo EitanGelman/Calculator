@@ -21,15 +21,22 @@ def operator_click(display_text, n):
         clear_display(display_text)
         display_text.set(sum)
 
+    
 def number_click(display_text, n):
-    display_text.set(display_text.get() + n)
-    return n
+    current = display_text.get()
 
-def extra_func_click(display_text,n):
+    if n == "." and "." in current:
+        return
+
+    display_text.set(current + n)
+
+def extra_func_click(display_text, button_label):
     global a
     global b
 
-    if n == "C":
+    if button_label == "C":
+        clear_display(display_text)
+    elif button_label == "AC":
         a = None
         b = None
         clear_display(display_text)
