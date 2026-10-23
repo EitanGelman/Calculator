@@ -59,10 +59,10 @@ def setup_buttons(application):
     ]
 
     for sign, r, c in operator_layout:
-            btn = Button(
-                application, 
-                text=sign, 
-                command=lambda d=digit: functions.operator_click(d),  # Advanced lambda binding
-                **operator_button_style
-            )
-            btn.grid(row=r, column=c, padx=1, pady=1)
+        btn = Button(
+            application, 
+            text=sign, 
+            command=lambda d=digit: functions.operator_click(d),  # Advanced lambda binding
+            **operator_button_style
+        )
+        btn.grid(row=r, column=c, padx=1, pady=1)
