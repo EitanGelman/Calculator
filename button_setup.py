@@ -2,7 +2,7 @@ from tkinter import *
 from tkmacosx import Button
 import functions
 
-def setup_buttons(application):
+def setup_buttons(application, display_text):
     operator_button_style = {
         "font": (".AppleSystemUIFont", 20, "bold"),
         "bg": "#f29e1f",
@@ -18,7 +18,7 @@ def setup_buttons(application):
     }
 
     number_button_style = {
-        "font": (".AppleSystemUIFont", 20, "bold"),
+        "font": (".AppleSystemUIFont", 20),
         "bg": "black",
         "fg": "white",
         "activebackground": "#1f1f1f",
@@ -45,14 +45,14 @@ def setup_buttons(application):
         btn = Button(
             application, 
             text=digit, 
-            command=lambda d=digit: functions.number_click(d),  # Advanced lambda binding
+            command=lambda d=digit: functions.number_click(display_text, d),
             **number_button_style
         )
         btn.grid(row=r, column=c, padx=1, pady=1)
 
     operator_layout = [
         ("÷", 1, 3),
-        ("x", 2, 3),
+        ("×", 2, 3),
         ("-", 3, 3),
         ("+", 4, 3),
         ("=", 4, 2)
@@ -62,7 +62,7 @@ def setup_buttons(application):
         btn = Button(
             application, 
             text=sign, 
-            command=lambda d=digit: functions.operator_click(d),  # Advanced lambda binding
+            command=lambda s=sign: functions.operator_click(display_text,s),
             **operator_button_style
         )
         btn.grid(row=r, column=c, padx=1, pady=1)

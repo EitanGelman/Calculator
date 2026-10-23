@@ -1,6 +1,7 @@
 from tkinter import *
-def number_click(n):
-    print(f"{n}")
 
-def operator_click(sign):
-    print(f"{sign}")
+def operator_click(display_text, n):
+    display_text.set(display_text.get()+n)
+
+def number_click(display_text, n):
+    display_text.set(display_text.get() + n)
