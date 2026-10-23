@@ -1,3 +1,4 @@
+from tkinter import *
 def number_click(n):
     print(f"{n}")
 
