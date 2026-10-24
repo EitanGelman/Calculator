@@ -5,8 +5,8 @@ import functions
 application = Tk()
 
 application.title("Calculator")
-application.geometry("248x376")
-application.resizable(False,False)
+# application.geometry("248x376")
+# application.resizable(False,False)
 display_text = StringVar(application)
 
 display = Label(
